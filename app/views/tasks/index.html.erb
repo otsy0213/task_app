@@ -1,0 +1,50 @@
+<!--タスク一覧表示ページです。-->
+<!--ここにあるタスクを参照したり、編集、削除できるようにする-->
+<h2>予定一覧</h2>
+<% if flash.notice %>
+      <p class="notice"><%= flash.notice %></p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>タイトル</th>
+      <th>開始日時</th>
+      <th>終了日時</th>
+      <th>備考</th>
+      <th>作成日</th>
+      <th>更新日</th>
+      <th>詳細</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= task.start %></td>
+        <td><%= task.end %></td>
+        <td><%= task.remarks %></td>
+        <td><%= task.created_at.to_s(:datetime_jp) %></td>
+        <td><%= task.updated_at.to_s(:datetime_jp) %></td>
+        <td>
+          <%= link_to "参照", task %>
+        </td>
+        <td>
+          <%= link_to "編集", [:edit, task] %>
+        </td>
+        <td>
+          <%= link_to "削除", task, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "ここで予定を新規登録", :new_task %></p>
+
+
+
