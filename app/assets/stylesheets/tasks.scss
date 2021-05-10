@@ -1,0 +1,25 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+h1 {
+    background-color:limegreen;
+    color:white;
+}
+
+li {
+    list-style:none;
+}
+
+.notice {
+    color:red;
+}
+
+table th {
+    background-color: limegreen;
+    padding: 10px 20px;
+}
+
+table td {
+    background-color: #f4fff4;
+    padding: 10px 20px;
+}

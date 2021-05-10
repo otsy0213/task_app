@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskApp3</title>
+    <title>Railsのスケジュール帳</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Ruby on Railsを使ったスケジュール管理アプリ</h1>
+    </header>
+        <%= yield %>
+    <footer>
+        <h1>現在時刻:<%= Time.zone.now.strftime("%Y-%m-%d %H:%M") %></h1>
+    </footer>
   </body>
 </html>
